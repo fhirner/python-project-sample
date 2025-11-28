@@ -1,0 +1,34 @@
+[project]
+name = "pyproject-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = ["rich>=14.2.0"]
+
+[dependency-groups]
+dev = ["basedpyright>=1.34.0", "pytest>=8.4.2"]
+
+[tool.pytest.ini_options]
+pythonpath = "."
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # Naming
+    "N",
+]
+
+[tool.basedpyright]
+typeCheckingMode = "strict"
