@@ -1,7 +1,4 @@
-from typing import Literal
-
-
-def say_hello() -> Literal["Hello from pyproject-test!"]:
+def say_hello() -> str:
     return "Hello from pyproject-test!"
 
 
