@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  format-validate:
+  format-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
       - name: Check formatting
         run: uv run ruff format --check --diff
 
-  lint-validate:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
       - name: Run linter
         run: uv run ruff check --output-format=github
 
-  type-validate:
+  typecheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -72,7 +72,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
-    needs: [format-validate, lint-validate, type-validate]
+    needs: [format-check, lint, typecheck]
     steps:
       - uses: actions/checkout@v4
 
