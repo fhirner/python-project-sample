@@ -1,4 +1,4 @@
-def say_hello() -> int:
+def say_hello() -> str:
     return "Hello from pyproject-test!"
 
 
